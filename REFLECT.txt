@@ -1,0 +1,48 @@
+Name: Andy Nguyen
+NetID: aln20
+Hours Spent: 10 hours
+Consulted With: Ryan Fu and Simran Singh (both students)
+Resources Used: NONE 
+Impressions: Very difficult assignment
+----------------------------------------------------------------------
+Problem 1: How does doubling N affect the running time?
+Answer:
+	3A DFS: Doubling N increases running time by a factor of 12
+	3B Quick Find: Doubling N increases running time by a factor of 8
+	3C Weighted quick union with path compression: Doubling N increases running time by a factor of 2 until N
+		gets very large (~400)
+
+Problem 2: How does doubling T affect the running time?
+Answer:
+	Doubling T results in double the running time for all 3 percolation techniques.
+
+Problem 3: Measure running time (using calls to System.currentTimeMillis)
+of the three versions of your program (DFS, Quick Find, and weighted quick
+union with path compression).
+Answer:
+	I used N = 100 and T = 50, resulting in the following:
+	3A DFS: 4270
+	3B Quick Find: 1610
+	3C Weighted quick union with path compression: 135
+
+Problem 4: Give a formula (using Big-Oh notation) of the running time on your computer (in seconds) as a function of both N and T.
+Answer:
+	3A DFS: O(T*N^4)
+	3B Quick Find: O(T*N^3)
+	3C Weighted quick union with path compression: O(T*N^2)
+
+Problem 5: Estimate the largest experiment you could  perform in one
+[minute, day, year] assuming your computer has enough memory.
+Answer:
+	Assuming we are using the quickest percolation method, QuickUWPC, and using our Big-OH formula of O(n^2):
+		Runtime for N = 500, T = 1 is 100 ms, therefore:
+	5A 1 minute: N = 312247.44871, T = 1
+	5B 1 day: N = 464758.0015, T = 1
+	5C 1 year: N = 8879752.249, T = 1
+
+Problem 6: Give a formula (using Big-Oh notation) that describes the amount
+of memory (in bytes) that your IPercolate implementation consumes as a function of N.
+Answer:
+	6A DFS: O(N^2)
+	6B Quick Find: O(N^2)
+	6C Weighted quick union with path compression: O(N^2)
